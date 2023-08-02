@@ -1,33 +1,24 @@
-
-/*
-*	IMPORTANT:
-*	The code will be avaluated based on:
-*		Code design  
-*
-*/
- 
- 
 #include "Timer.h"
 #include "RadioRoute.h"
 
 
 module RadioRouteC @safe() {
   uses {
-  
-    /****** INTERFACES *****/
-	interface Boot;
-
-    //interfaces for communication
-	//interface for timers
-	//interface for LED
-    //other interfaces, if needed
+    interface Boot;
+    interface Leds;
+    interface Receive;
+    interface AMSend;
+    interface Timer<TMilli> as Timer0;
+    interface Timer<TMilli> as Timer1;
+    interface SplitControl as AMControl;
+    interface Packet;
   }
 }
+
 implementation {
 
   message_t packet;
   
-  // Variables to store the message to send
   message_t queued_packet;
   uint16_t queue_addr;
   uint16_t time_delays[7]={61,173,267,371,479,583,689}; //Time delay in milli seconds
@@ -117,8 +108,7 @@ implementation {
 	*/
   }
 
-  event message_t* Receive.receive(message_t* bufPtr, 
-				   void* payload, uint8_t len) {
+  event message_t* Receive.receive(message_t* bufPtr, void* payload, uint8_t len) {
 	/*
 	* Parse the receive packet.
 	* Implement all the functionalities

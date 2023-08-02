@@ -1,15 +1,8 @@
 #ifndef RADIO_ROUTE_H
 #define RADIO_ROUTE_H
 
-/*
-TOPIC is a nx_uint8_t 
-	0 TEMPERATURE 
-	1 HUMIDITY 
-	2 LUMINOSITY
-*/
-
-
 typedef nx_struct CONNECT_msg {
+	nx_uint8_t ID;
 
 } CONNECT_msg_t;
 
@@ -39,7 +32,7 @@ typedef nx_struct PUBLISH_msg {
 
 
 enum {
-  AM_RADIO_COUNT_MSG = 10,
+  AM_RADIO_ROUTE_MSG = 10,
 };
 
 #endif

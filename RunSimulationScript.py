@@ -107,13 +107,11 @@ time7 = 0*t.ticksPerSecond();
 node7.bootAtTime(time7);
 print ">>>Will boot at time", time7/t.ticksPerSecond(), "[sec]";
 
-
 print "Creating node 8...";
 node8 = t.getNode(8);
 time8 = 0*t.ticksPerSecond();
 node8.bootAtTime(time8);
 print ">>>Will boot at time", time8/t.ticksPerSecond(), "[sec]";
-
 
 print "Creating radio channels..."
 f = open(topofile, "r");
@@ -158,4 +156,3 @@ for i in range(0,1200):
 	t.runNextEvent()
 	
 print "\n\n\nSimulation finished!";
-

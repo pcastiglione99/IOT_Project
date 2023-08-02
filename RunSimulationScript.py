@@ -113,6 +113,7 @@ time8 = 0*t.ticksPerSecond();
 node8.bootAtTime(time8);
 print ">>>Will boot at time", time8/t.ticksPerSecond(), "[sec]";
 
+
 print "Creating radio channels..."
 f = open(topofile, "r");
 lines = f.readlines()

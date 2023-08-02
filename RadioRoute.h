@@ -1,35 +1,21 @@
 #ifndef RADIO_ROUTE_H
 #define RADIO_ROUTE_H
 
-typedef nx_struct CONNECT_msg {
-	nx_uint8_t ID;
+/*
+Type:
+0 CONNECT
+1 CONNACK
+2 SUBSCRIBE
+3 SUBACK
+4 PUBLISH
+*/
 
-} CONNECT_msg_t;
-
-typedef nx_struct CONNACK_msg {
-
-} CONNACK_msg_t;
-
-typedef nx_struct SUBSCRIBE_msg {
-
+typedef nx_struct mqtt_msg {
+	nx_uint8_t type;
 	nx_uint8_t ID;
 	nx_uint8_t topic;
-
-} SUBSCRIBE_msg_t;
-
-typedef nx_struct SUBACK_msg {
-
-} SUBACK_msg_t;
-
-typedef nx_struct PUBLISH_msg {
-
-	nx_uint8_t topic;
-	nx_uint16_t payload;
-
-} PUBLISH_msg_t;
-
-
-
+	nx_uint8_t payload;
+} mqtt_msg_t;
 
 enum {
   AM_RADIO_ROUTE_MSG = 10,

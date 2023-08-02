@@ -33,7 +33,7 @@ implementation {
     	if (err == SUCCESS) {
     		dbg("radio", "Radio started.\n");
       		if (TOS_NODE_ID != 0) {
-      			call Timer0.startOneShot( time_delays[TOS_NODE_ID-1] );
+      			call Timer0.startOneShot( time_delays[TOS_NODE_ID - 1] );
       		}
     	}
     	else {
@@ -53,36 +53,40 @@ implementation {
 	
 
   event message_t* Receive.receive(message_t* bufPtr, void* payload, uint8_t len) {
-    if (len != sizeof(CONNECT_msg_t)) {return bufPtr;}
+    if (len != sizeof(mqtt_msg_t)) {return bufPtr;}
     else {
-      CONNECT_msg_t* msg = (CONNECT_msg_t*)payload;
-      uint16_t ID = msg->ID;
-      dbg("radio_rec", "Connect received from %d.\n", ID);
+      mqtt_msg_t* msg = (mqtt_msg_t*)payload;
+      
+      if(TOS_NODE_ID == 0) {
+      
+      	switch (msg->type){
+      		case 0: //CONNECT
+      			dbg("radio_rec", "Connect received from %d.\n", msg->ID);
+      	}
+      }
       
       return bufPtr;
     }
   }
 	
 	
-	void send(uint16_t address, message_t* packet) {
-		if (locked) {
-			return;
-		}
-		else {
-			if (call AMSend.send(address, &packet, sizeof(CONNECT_msg_t)) == SUCCESS) {
-			dbg("radio_send", "Connection packet sent to %d.\n", address);	
-			locked = TRUE;
-			}
-		}
-	}
 	 
 	event void Timer0.fired() {
 		connect_to_PAN();
 	}
 	
 	void connect_to_PAN() {
-		CONNECT_msg_t* connect_msg = (CONNECT_msg_t*)call Packet.getPayload(&packet, sizeof(CONNECT_msg_t));
-    	connect_msg->ID = TOS_NODE_ID;
-    	send(0, &connect_msg);
+	
+		mqtt_msg_t* connect_msg ;
+
+		connect_msg = (mqtt_msg_t*)call Packet.getPayload(&packet, sizeof(mqtt_msg_t));
+		if (connect_msg == NULL) {
+			return;
+		}
+		connect_msg->ID = TOS_NODE_ID;
+		if (call AMSend.send(0, &packet, sizeof(mqtt_msg_t)) == SUCCESS) {
+			dbg("radio_send", "Send connection packet\n");
+			locked = TRUE;
+		}
 	}
 }

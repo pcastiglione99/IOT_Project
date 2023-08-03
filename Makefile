@@ -1,4 +1,4 @@
-COMPONENT=RadioRouteAppC
+COMPONENT=mqttAppC
 
 include $(MAKERULES)
 

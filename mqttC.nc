@@ -47,14 +47,16 @@ implementation {
 	
 	void send_connect_to_PANC();
 	void send_subscribe(uint8_t topic);
+	void send_publish(uint8_t topic, uint16_t payload);
 	
 	
 	void create_connection(uint8_t client_ID);
 	void create_subscription(uint8_t client_ID, uint8_t topic);
+	void forward_publish(uint8_t topic, mqtt_msg_t* msg);
 	
 	
 	    
-    void init_connect(){
+    void init_connect() {
     	uint16_t i;
     	for (i = 1; i < MAX_CONNECTION; i++) {
       		connection[i] = FALSE;
@@ -111,6 +113,8 @@ implementation {
 	  					create_connection(msg->ID);
 	  					break;
 	  				case PUBLISH:
+	  					dbg("radio_rec", "PUBLISH received from %d.\n", msg->ID);
+	  					forward_publish(msg->topic, msg);
 	  					break;
 	  				default:
 	  					dbgerror("radio_rec", "INVALID MESSAGE.\n");
@@ -129,6 +133,7 @@ implementation {
 	  					dbg("radio_rec", "SUBACK received.\n");
 	  					break;
 	  				case PUBLISH:
+	  					dbg("radio_rec", "PUBLISH received.\n");
 	  					break;
 	  				default:
 	  					dbgerror("radio_rec", "INVALID MESSAGE.\n");
@@ -239,6 +244,37 @@ implementation {
 	event void Timer_wait_SUBACK.fired() {
 		if(!SUBACK_received) send_subscribe(queued_topic);
 	}
+	
+	
+	void send_publish(uint8_t topic, uint16_t payload) {
+		mqtt_msg_t* PUBLISH_msg;
+		
+		PUBLISH_msg = (mqtt_msg_t*)call Packet.getPayload(&packet, sizeof(mqtt_msg_t));
+		if (PUBLISH_msg == NULL) {
+			return;
+		}
+		PUBLISH_msg->type = PUBLISH;
+		PUBLISH_msg->ID = TOS_NODE_ID;
+		PUBLISH_msg->topic = topic;
+		PUBLISH_msg->payload = payload;
+		
+		if (call AMSend.send(PANC_ID, &packet, sizeof(mqtt_msg_t)) == SUCCESS) {
+			dbg("radio_send", "Send PUBLISH packet\n");
+			locked = TRUE;
+		}
+	}
+	
+	void forward_publish(uint8_t topic, mqtt_msg_t* msg) {
+		uint8_t i;
+		for(i = 1; i < MAX_CONNECTION; i++) {
+			if(subscription[topic][i]) {
+				if (call AMSend.send(i, &packet, sizeof(mqtt_msg_t)) == SUCCESS) {
+				dbg("radio_send", "Send PUBLISH packet to %d.\n",i);
+				locked = TRUE;
+				}
+			}
+		}
+	 }
 	
 	
 	

@@ -56,6 +56,8 @@ print "Activate debug message on channel radio_rec"
 t.addChannel("radio_rec",out);
 print "Activate debug message on channel radio_pack"
 t.addChannel("radio_pack",out);
+print "Activate debug message on channel general"
+t.addChannel("general",out);
 
 
 print "Creating node 0 (PAN)...";

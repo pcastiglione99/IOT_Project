@@ -11,7 +11,11 @@
 #define SUBACK 3
 #define PUBLISH 4
 
-#define CONNACK_WAIT 500
+#define TEMPERATURE 0
+#define HUMIDITY 1
+#define LUMINOSITY 2
+
+#define ACK_WAIT 500
 
 
 module mqttC @safe() {
@@ -21,7 +25,8 @@ module mqttC @safe() {
     interface Receive;
     interface AMSend;
     interface Timer<TMilli> as Timer0;
-    interface Timer<TMilli> as Timer_wait_connack;
+    interface Timer<TMilli> as Timer_wait_CONNACK;
+    interface Timer<TMilli> as Timer_wait_SUBACK;
     interface SplitControl as AMControl;
     interface Packet;
   }
@@ -32,9 +37,24 @@ implementation {
 	bool locked;
 	uint16_t time_delays[N_CLIENTS]={61,173,267,371,479,583,689,799};
 	bool connection[MAX_CONNECTION];
-    
+	bool subscription[3][MAX_CONNECTION];
+
+
+	bool CONNACK_received = FALSE;
+	bool SUBACK_received = FALSE;
+	uint8_t queued_topic;
+	bool wait_for_ACK = FALSE;
+	
+	void send_connect_to_PANC();
+	void send_subscribe(uint8_t topic);
+	
+	
+	void create_connection(uint8_t client_ID);
+	void create_subscription(uint8_t client_ID, uint8_t topic);
+	
+	
+	    
     void init_connect(){
-    
     	uint16_t i;
     	for (i = 1; i < MAX_CONNECTION; i++) {
       		connection[i] = FALSE;
@@ -42,11 +62,15 @@ implementation {
 		connection[0]=TRUE;
 	};
 	
-	bool CONNECT_sent = FALSE;
-	bool CONNACK_received = FALSE;
-	
-	void connect_to_PANC();
-	void create_connection(nx_uint8_t client_ID);
+    void init_subscription(){
+    	uint16_t i;
+    	uint16_t j;
+    	for(i = 0; i < 3; i++) {
+    		for (j = 0; j < MAX_CONNECTION; j++) {
+      			subscription[i][j] = FALSE;
+    		}
+		}
+	};
 	
 	event void Boot.booted() {
 		dbg("boot", "APP BOOTED.\n");
@@ -83,6 +107,8 @@ implementation {
 	  					create_connection(msg->ID);
 	  					break;
 	  				case SUBSCRIBE:
+	  					dbg("radio_rec", "SUBSCRIBE received from %d.\n", msg->ID);
+	  					create_connection(msg->ID);
 	  					break;
 	  				case PUBLISH:
 	  					break;
@@ -96,8 +122,11 @@ implementation {
 	  				case CONNACK:
 	  					CONNACK_received = TRUE;
 	  					dbg("radio_rec", "CONNACK received.\n");
+	  					dbg("general", "Connected to PANC.\n");
 	  					break;
 	  				case SUBACK:
+	  					SUBACK_received = TRUE;
+	  					dbg("radio_rec", "SUBACK received.\n");
 	  					break;
 	  				case PUBLISH:
 	  					break;
@@ -115,11 +144,11 @@ implementation {
 	
 	 
 	event void Timer0.fired() {
-		connect_to_PANC();
+		send_connect_to_PANC();
 	}
 	
 	
-	void connect_to_PANC() {
+	void send_connect_to_PANC() {
 	
 		mqtt_msg_t* connect_msg;
 
@@ -133,35 +162,82 @@ implementation {
 		if (call AMSend.send(PANC_ID, &packet, sizeof(mqtt_msg_t)) == SUCCESS) {
 			dbg("radio_send", "Send CONNECTION packet\n");
 			locked = TRUE;
-			CONNECT_sent = TRUE;
-			call Timer_wait_connack.startOneShot(CONNACK_WAIT);
+			wait_for_ACK = TRUE;
+			call Timer_wait_CONNACK.startOneShot(ACK_WAIT);
 		}
+	}	
+	event void Timer_wait_CONNACK.fired() {
+		if(!CONNACK_received) send_connect_to_PANC();
 	}
 	
-	event void Timer_wait_connack.fired() {
-		if(!CONNACK_received) connect_to_PANC();
+	
+	
+	void create_connection(uint8_t client_ID) {
 		
-	}
-	
-	void create_connection(nx_uint8_t client_ID) {
-	
-		mqtt_msg_t* connack_msg;
-	
-		if(!connection[client_ID]){
+		mqtt_msg_t* CONNACK_msg;
 		
-			connection[client_ID] = TRUE;
+		dbg("general", "Creating connection with client %d.\n",client_ID);
+		connection[client_ID] = TRUE;
+		
+		
+		CONNACK_msg = (mqtt_msg_t*)call Packet.getPayload(&packet, sizeof(mqtt_msg_t));
+		if (CONNACK_msg == NULL) {
+			return;
+		}
+		CONNACK_msg->type = CONNACK;
+		
+		if (call AMSend.send(client_ID, &packet, sizeof(mqtt_msg_t)) == SUCCESS) {
+			dbg("radio_send", "Send CONNACK packet to %d.\n", client_ID);
+			locked = TRUE;
+		}
 
-			connack_msg = (mqtt_msg_t*)call Packet.getPayload(&packet, sizeof(mqtt_msg_t));
-			if (connack_msg == NULL) {
-				return;
-			}
-			connack_msg->type = CONNACK;
+	}
+	
+	void create_subscription(uint8_t topic, uint8_t client_ID) {
+			
+		mqtt_msg_t* SUBACK_msg;
 		
-			if (call AMSend.send(client_ID, &packet, sizeof(mqtt_msg_t)) == SUCCESS) {
-				dbg("radio_send", "Send CONNACK packet to %d.\n", client_ID);
-				locked = TRUE;
-			}
+		dbg("general", "Creating connection with client %d.\n",client_ID);
+		subscription[topic][client_ID] = TRUE;
+		
+		SUBACK_msg = (mqtt_msg_t*)call Packet.getPayload(&packet, sizeof(mqtt_msg_t));
+		if (SUBACK_msg == NULL) {
+			return;
 		}
+		SUBACK_msg->type = SUBACK;
+		
+		if (call AMSend.send(client_ID, &packet, sizeof(mqtt_msg_t)) == SUCCESS) {
+			dbg("radio_send", "Send SUBACK packet to %d.\n", client_ID);
+			locked = TRUE;
+		}
+		
+		
+	}
+	
+
+	void send_subscribe(uint8_t topic) {
+		mqtt_msg_t* SUBSCRIBE_msg;
+		
+		queued_topic = topic;
+	
+
+		SUBSCRIBE_msg = (mqtt_msg_t*)call Packet.getPayload(&packet, sizeof(mqtt_msg_t));
+		if (SUBSCRIBE_msg == NULL) {
+			return;
+		}
+		SUBSCRIBE_msg->type = SUBSCRIBE;
+		SUBSCRIBE_msg->ID = TOS_NODE_ID;
+		SUBSCRIBE_msg->topic = topic;
+		
+		if (call AMSend.send(PANC_ID, &packet, sizeof(mqtt_msg_t)) == SUCCESS) {
+			dbg("radio_send", "Send SUBSCRIBE packet\n");
+			locked = TRUE;
+			wait_for_ACK = TRUE;
+			call Timer_wait_SUBACK.startOneShot(ACK_WAIT);
+		}
+	}	
+	event void Timer_wait_SUBACK.fired() {
+		if(!SUBACK_received) send_subscribe(queued_topic);
 	}
 	
 	

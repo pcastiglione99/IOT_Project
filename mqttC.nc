@@ -27,6 +27,7 @@ module mqttC @safe() {
     interface Timer<TMilli> as Timer0;
     interface Timer<TMilli> as Timer_wait_CONNACK;
     interface Timer<TMilli> as Timer_wait_SUBACK;
+    interface Timer<TMilli> as Timer_TEST;
     interface SplitControl as AMControl;
     interface Packet;
   }
@@ -109,8 +110,8 @@ implementation {
 	  					create_connection(msg->ID);
 	  					break;
 	  				case SUBSCRIBE:
-	  					dbg("radio_rec", "SUBSCRIBE received from %d.\n", msg->ID);
-	  					create_subscription(msg->topic, msg->ID);
+	  					dbg("radio_rec", "SUBSCRIBE received from %d to topic %d.\n", msg->ID, msg->topic);
+	  					if(connection[msg->ID]) create_subscription(msg->topic, msg->ID);
 	  					break;
 	  				case PUBLISH:
 	  					dbg("radio_rec", "PUBLISH received from %d.\n", msg->ID);
@@ -127,6 +128,7 @@ implementation {
 	  					CONNACK_received = TRUE;
 	  					dbg("radio_rec", "CONNACK received.\n");
 	  					dbg("general", "Connected to PANC.\n");
+	  					if (TOS_NODE_ID == 3) call Timer_TEST.startOneShot(5000);
 	  					break;
 	  				case SUBACK:
 	  					SUBACK_received = TRUE;
@@ -150,6 +152,10 @@ implementation {
 	 
 	event void Timer0.fired() {
 		send_connect_to_PANC();
+	}
+	
+	event void Timer_TEST.fired() {
+		send_subscribe(HUMIDITY);
 	}
 	
 	
@@ -202,7 +208,7 @@ implementation {
 			
 		mqtt_msg_t* SUBACK_msg;
 		
-		dbg("general", "Creating connection with client %d.\n",client_ID);
+		dbg("general", "Creating subscription to topic %d.\n",topic);
 		subscription[topic][client_ID] = TRUE;
 		
 		SUBACK_msg = (mqtt_msg_t*)call Packet.getPayload(&packet, sizeof(mqtt_msg_t));
@@ -279,4 +285,3 @@ implementation {
 	
 	
 }
-

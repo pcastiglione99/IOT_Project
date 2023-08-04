@@ -9,7 +9,8 @@ implementation {
   components new TimerMilliC() as Timer0;
   components new TimerMilliC() as Timer_wait_CONNACK;
   components new TimerMilliC() as Timer_wait_SUBACK;
-  components new TimerMilliC() as Timer_TEST;
+  components new TimerMilliC() as Timer_TEST_SUB;
+  components new TimerMilliC() as Timer_TEST_PUB;
   components ActiveMessageC;
   
   App.Boot -> MainC.Boot;
@@ -21,7 +22,8 @@ implementation {
   App.Timer0 -> Timer0;
   App.Timer_wait_CONNACK -> Timer_wait_CONNACK;
   App.Timer_wait_SUBACK -> Timer_wait_SUBACK;
-  App.Timer_TEST -> Timer_TEST;
+  App.Timer_TEST_SUB -> Timer_TEST_SUB;
+  App.Timer_TEST_PUB -> Timer_TEST_PUB;
   App.Packet -> AMSenderC;
 
 }

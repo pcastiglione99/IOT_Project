@@ -27,7 +27,8 @@ module mqttC @safe() {
     interface Timer<TMilli> as Timer0;
     interface Timer<TMilli> as Timer_wait_CONNACK;
     interface Timer<TMilli> as Timer_wait_SUBACK;
-    interface Timer<TMilli> as Timer_TEST;
+    interface Timer<TMilli> as Timer_TEST_SUB;
+    interface Timer<TMilli> as Timer_TEST_PUB;
     interface SplitControl as AMControl;
     interface Packet;
   }
@@ -53,7 +54,7 @@ implementation {
 	
 	void create_connection(uint8_t client_ID);
 	void create_subscription(uint8_t client_ID, uint8_t topic);
-	void forward_publish(uint8_t topic, mqtt_msg_t* msg);
+	void forward_publish(uint8_t type, uint8_t client_ID, uint8_t topic, uint16_t payload);
 	
 	
 	    
@@ -106,16 +107,18 @@ implementation {
 	  
 	  			switch (msg->type){
 	  				case CONNECT:
-	  					dbg("radio_rec", "CONNECT received from %d.\n", msg->ID);
-	  					create_connection(msg->ID);
+	  					dbg("radio_rec", "CONNECT received from %d.\n", msg->client_ID);
+	  					create_connection(msg->client_ID);
 	  					break;
 	  				case SUBSCRIBE:
-	  					dbg("radio_rec", "SUBSCRIBE received from %d to topic %d.\n", msg->ID, msg->topic);
-	  					if(connection[msg->ID]) create_subscription(msg->topic, msg->ID);
+	  					dbg("radio_rec", "SUBSCRIBE received from %d to topic %d.\n", msg->client_ID, msg->topic);
+	  					if(connection[msg->client_ID]) {
+	  						(!subscription[msg->topic][msg->client_ID]) ? create_subscription(msg->topic, msg->client_ID) : dbg("general", "Already subscribed!!!!.\n"); ;
+	  					}
 	  					break;
 	  				case PUBLISH:
-	  					dbg("radio_rec", "PUBLISH received from %d.\n", msg->ID);
-	  					forward_publish(msg->topic, msg);
+	  					dbg("radio_rec", "PUBLISH received from %d on topic:%d with payload:%d.\n", msg->client_ID, msg->topic, msg->payload);
+	  					forward_publish(msg->type, msg->client_ID, msg->topic, msg->payload);
 	  					break;
 	  				default:
 	  					dbgerror("radio_rec", "INVALID MESSAGE.\n");
@@ -128,14 +131,15 @@ implementation {
 	  					CONNACK_received = TRUE;
 	  					dbg("radio_rec", "CONNACK received.\n");
 	  					dbg("general", "Connected to PANC.\n");
-	  					if (TOS_NODE_ID == 3) call Timer_TEST.startOneShot(5000);
+	  					if (TOS_NODE_ID == 3) call Timer_TEST_SUB.startOneShot(1000); // To test subscription
+	  					if (TOS_NODE_ID == 1) call Timer_TEST_PUB.startOneShot(2000);
 	  					break;
 	  				case SUBACK:
 	  					SUBACK_received = TRUE;
 	  					dbg("radio_rec", "SUBACK received.\n");
 	  					break;
 	  				case PUBLISH:
-	  					dbg("radio_rec", "PUBLISH received.\n");
+	  					dbg("radio_rec", "PUBLISH received on TOPIC:%d VALUE:%d.\n", msg->topic, msg->payload);
 	  					break;
 	  				default:
 	  					dbgerror("radio_rec", "INVALID MESSAGE.\n");
@@ -154,10 +158,13 @@ implementation {
 		send_connect_to_PANC();
 	}
 	
-	event void Timer_TEST.fired() {
+	event void Timer_TEST_SUB.fired() {
 		send_subscribe(HUMIDITY);
 	}
 	
+	event void Timer_TEST_PUB.fired() {
+		send_publish(HUMIDITY, 300);
+	}
 	
 	void send_connect_to_PANC() {
 	
@@ -168,10 +175,10 @@ implementation {
 			return;
 		}
 		connect_msg->type = CONNECT;
-		connect_msg->ID = TOS_NODE_ID;
+		connect_msg->client_ID = TOS_NODE_ID;
 		
 		if (call AMSend.send(PANC_ID, &packet, sizeof(mqtt_msg_t)) == SUCCESS) {
-			dbg("radio_send", "Send CONNECTION packet\n");
+			dbg("radio_send", "Send CONNECT packet\n");
 			locked = TRUE;
 			wait_for_ACK = TRUE;
 			call Timer_wait_CONNACK.startOneShot(ACK_WAIT);
@@ -237,7 +244,7 @@ implementation {
 			return;
 		}
 		SUBSCRIBE_msg->type = SUBSCRIBE;
-		SUBSCRIBE_msg->ID = TOS_NODE_ID;
+		SUBSCRIBE_msg->client_ID = TOS_NODE_ID;
 		SUBSCRIBE_msg->topic = topic;
 		
 		if (call AMSend.send(PANC_ID, &packet, sizeof(mqtt_msg_t)) == SUCCESS) {
@@ -260,7 +267,7 @@ implementation {
 			return;
 		}
 		PUBLISH_msg->type = PUBLISH;
-		PUBLISH_msg->ID = TOS_NODE_ID;
+		PUBLISH_msg->client_ID = TOS_NODE_ID;
 		PUBLISH_msg->topic = topic;
 		PUBLISH_msg->payload = payload;
 		
@@ -270,8 +277,20 @@ implementation {
 		}
 	}
 	
-	void forward_publish(uint8_t topic, mqtt_msg_t* msg) {
+	void forward_publish(uint8_t type, uint8_t client_ID, uint8_t topic, uint16_t payload) {
 		uint8_t i;
+		
+		mqtt_msg_t* PUBLISH_msg;
+		
+		PUBLISH_msg = (mqtt_msg_t*)call Packet.getPayload(&packet, sizeof(mqtt_msg_t));
+		if (PUBLISH_msg == NULL) {
+			return;
+		}
+		PUBLISH_msg->type = type;
+		PUBLISH_msg->client_ID = client_ID;
+		PUBLISH_msg->topic = topic;
+		PUBLISH_msg->payload = payload;
+		
 		for(i = 1; i < MAX_CONNECTION; i++) {
 			if(subscription[topic][i]) {
 				if (call AMSend.send(i, &packet, sizeof(mqtt_msg_t)) == SUCCESS) {
@@ -285,3 +304,4 @@ implementation {
 	
 	
 }
+

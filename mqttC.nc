@@ -110,7 +110,7 @@ implementation {
 	  					break;
 	  				case SUBSCRIBE:
 	  					dbg("radio_rec", "SUBSCRIBE received from %d.\n", msg->ID);
-	  					create_connection(msg->ID);
+	  					create_subscription(msg->topic, msg->ID);
 	  					break;
 	  				case PUBLISH:
 	  					dbg("radio_rec", "PUBLISH received from %d.\n", msg->ID);

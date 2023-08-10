@@ -1,0 +1,96 @@
+[
+    {
+        "id": "b9e57c18.21ad4",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e618a8a9.41006",
+        "type": "tcp in",
+        "z": "b9e57c18.21ad4",
+        "name": "",
+        "server": "client",
+        "host": "localhost",
+        "port": "60001",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "\\n",
+        "topic": "",
+        "base64": false,
+        "x": 280,
+        "y": 600,
+        "wires": [
+            [
+                "54dd8c4c.4fe3bc"
+            ]
+        ]
+    },
+    {
+        "id": "6e1e0c5e.c1666c",
+        "type": "debug",
+        "z": "b9e57c18.21ad4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 820,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "54dd8c4c.4fe3bc",
+        "type": "function",
+        "z": "b9e57c18.21ad4",
+        "name": "split",
+        "func": "const channelId = \"2240116\";\nmsg.topic=`channels/${channelId}/publish`;\nvar dict = { 'status': 'MQTTPUBLISH' };\nconst partsArray = msg.payload.split(',');\nswitch (partsArray[0]) {\n    case '0':\n        dict = { ...dict, 'field1': partsArray[1]};\n        break;\n    case '1':\n        dict = { ...dict, 'field2': partsArray[1] };\n        break;\n    case '2':\n        dict = { ...dict, 'field3': partsArray[1] };\n        break;\n    default:\n        break;\n}\nmsg.payload = Object.entries(dict)\n    .map(([key, value]) => `${key}=${value}`)\n    .join('&');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 5,
+        "x": 590,
+        "y": 600,
+        "wires": [
+            [
+                "6e1e0c5e.c1666c",
+                "2a6f55ab.12de32"
+            ]
+        ]
+    },
+    {
+        "id": "2a6f55ab.12de32",
+        "type": "mqtt out",
+        "z": "b9e57c18.21ad4",
+        "name": "",
+        "topic": "",
+        "qos": "0",
+        "retain": "",
+        "broker": "d3fa694e.2660b",
+        "x": 1010,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "d3fa694e.2660b",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "Thingspeak",
+        "broker": "mqtt3.thingspeak.com",
+        "port": "1883",
+        "clientid": "GR4OKB4qKSkJFBEvFDADCDg",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": false,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]

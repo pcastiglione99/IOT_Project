@@ -1,4 +1,4 @@
-#ifndef MQTT_H
+ #ifndef MQTT_H
 #define MQTT_H
 
 /*
@@ -15,6 +15,7 @@ typedef nx_struct mqtt_msg {
 	nx_uint8_t client_ID;
 	nx_uint8_t topic;
 	nx_uint16_t payload;
+	nx_uint32_t seq;
 } mqtt_msg_t;
 
 enum {

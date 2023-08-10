@@ -5,9 +5,25 @@ print "*                                          *";
 print "********************************************";
 
 import sys;
-import time;
+import socket
 
 from TOSSIM import *;
+
+
+# Function to handle socket server setup
+# def setup_socket_server(port):
+#     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#     server_socket.bind(('127.0.0.1', port))
+#     server_socket.listen(1)
+#     print("Waiting for PAN coordinator socket connection on port", port)
+    
+#     client_socket, addr = server_socket.accept()
+#     print("Connected to PAN coordinator:", addr)
+#     return client_socket
+
+
+# Create the socket server for PAN coordinator (node0)
+# client_socket = setup_socket_server(60001)
 
 t = Tossim([]);
 
@@ -28,11 +44,6 @@ print "Initializing simulator....";
 t.init();
 
 
-#simulation_outfile = "simulation.txt";
-#print "Saving sensors simulation output to:", simulation_outfile;
-#simulation_out = open(simulation_outfile, "w");
-
-#out = open(simulation_outfile, "w");
 out = sys.stdout;
 
 #Add debug channel
@@ -58,13 +69,18 @@ print "Activate debug message on channel radio_pack"
 t.addChannel("radio_pack",out);
 print "Activate debug message on channel general"
 t.addChannel("general",out);
+print "Activate debug message on channel sub"
+t.addChannel("sub",out);
+print "Activate debug message on channel pub"
+t.addChannel("pub",out);
 
 
-print "Creating node 0 (PAN)...";
-node0 =t.getNode(0);
-time0 = 0*t.ticksPerSecond(); #instant at which each node should be turned on
-node0.bootAtTime(time0);
-print ">>>Will boot at time",  time0/t.ticksPerSecond(), "[sec]";
+
+print "Creating node 9 (PANC)...";
+node9 = t.getNode(9);
+time9 = 0*t.ticksPerSecond();
+node9.bootAtTime(time9);
+print ">>>Will boot at time", time9/t.ticksPerSecond(), "[sec]";
 
 print "Creating node 1...";
 node1 =t.getNode(1);
@@ -73,29 +89,29 @@ node1.bootAtTime(time1);
 print ">>>Will boot at time",  time1/t.ticksPerSecond(), "[sec]";
 
 print "Creating node 2...";
-node2 = t.getNode(2);
-time2 = 0*t.ticksPerSecond();
+node2 =t.getNode(2);
+time2 = 0*t.ticksPerSecond(); #instant at which each node should be turned on
 node2.bootAtTime(time2);
-print ">>>Will boot at time", time2/t.ticksPerSecond(), "[sec]";
+print ">>>Will boot at time",  time2/t.ticksPerSecond(), "[sec]";
 
 print "Creating node 3...";
-node3 =t.getNode(3);
-time3 = 0*t.ticksPerSecond(); #instant at which each node should be turned on
+node3 = t.getNode(3);
+time3 = 0*t.ticksPerSecond();
 node3.bootAtTime(time3);
-print ">>>Will boot at time",  time3/t.ticksPerSecond(), "[sec]";
+print ">>>Will boot at time", time3/t.ticksPerSecond(), "[sec]";
 
 print "Creating node 4...";
-node4 = t.getNode(4);
-time4 = 0*t.ticksPerSecond();
+node4 =t.getNode(4);
+time4 = 0*t.ticksPerSecond(); #instant at which each node should be turned on
 node4.bootAtTime(time4);
-print ">>>Will boot at time", time4/t.ticksPerSecond(), "[sec]";
-
+print ">>>Will boot at time",  time4/t.ticksPerSecond(), "[sec]";
 
 print "Creating node 5...";
 node5 = t.getNode(5);
 time5 = 0*t.ticksPerSecond();
 node5.bootAtTime(time5);
 print ">>>Will boot at time", time5/t.ticksPerSecond(), "[sec]";
+
 
 print "Creating node 6...";
 node6 = t.getNode(6);
@@ -114,6 +130,8 @@ node8 = t.getNode(8);
 time8 = 0*t.ticksPerSecond();
 node8.bootAtTime(time8);
 print ">>>Will boot at time", time8/t.ticksPerSecond(), "[sec]";
+
+
 
 
 print "Creating radio channels..."
@@ -145,17 +163,17 @@ for line in lines:
             mid_compl = 0;
             sys.stdout.write ("#")
             sys.stdout.flush()
-        for i in range(0, MOTES):
+        for i in range(1, MOTES + 1):
             t.getNode(i).addNoiseTraceReading(val)
 print "Done!";
 
-for i in range(0, MOTES):
+for i in range(1, MOTES + 1):
     print ">>>Creating noise model for node:",i;
     t.getNode(i).createNoiseModel()
 
 print "Start simulation with TOSSIM! \n\n\n";
 
-for i in range(0,12000):
-	t.runNextEvent()
+for i in range(0, 15000):
+    t.runNextEvent();
 	
 print "\n\n\nSimulation finished!";

@@ -20,7 +20,7 @@
 #define LUMINOSITY 2
 
 
-#define ACK_WAIT 500
+#define DEFAULT_ACK_WAIT 500
 #define MAX_SUB_WAIT 5000
 #define MAX_PUB_WAIT 5000
 
@@ -48,6 +48,8 @@ implementation {
 	uint16_t time_delays[N_CLIENTS]={61,173,267,371,479,583,689,799};
 	bool connection[N_CLIENTS];
 	bool subscription[N_TOPICS][N_CLIENTS];
+	uint32_t conn_ack_wait = DEFAULT_ACK_WAIT;
+	uint32_t sub_ack_wait = DEFAULT_ACK_WAIT;
 
 	typedef struct ack_msg {
 		bool status;
@@ -146,6 +148,7 @@ implementation {
 							dbg("general", "Connected to PANC.\n");
 							waiting_CONNACK.status = FALSE;
 							waiting_CONNACK.seq = 0;
+							conn_ack_wait = DEFAULT_ACK_WAIT;
 							call Timer_SUB.startOneShot((call Random.rand32() % MAX_SUB_WAIT) + 500);
 							call Timer_PUB.startPeriodic((call Random.rand32() % MAX_PUB_WAIT) + 500);
 						}
@@ -156,6 +159,7 @@ implementation {
 							dbg("general", "Subscribed to a topic %d.\n", msg->topic);
 							waiting_SUBACK.status = FALSE;
 							waiting_SUBACK.seq = 0;
+							sub_ack_wait = DEFAULT_ACK_WAIT;
 						}
 	  					break;
 	  				case PUBLISH:
@@ -196,11 +200,14 @@ implementation {
 			locked = TRUE;
 			waiting_CONNACK.status = TRUE;
 			waiting_CONNACK.seq = connect_msg->seq;
-			call Timer_wait_CONNACK.startOneShot(ACK_WAIT);
+			call Timer_wait_CONNACK.startOneShot(conn_ack_wait);
 		}
 	}	
 	event void Timer_wait_CONNACK.fired() {
-		if(waiting_CONNACK.status) send_connect_to_PANC();
+		if(waiting_CONNACK.status){
+			conn_ack_wait *= 2;
+			send_connect_to_PANC();
+		}
 	}
 	
 	
@@ -251,10 +258,11 @@ implementation {
 		
 	}
 	
-
-		
 	event void Timer_wait_SUBACK.fired() {
-		if(waiting_SUBACK.status) send_subscribe(queued_topic);
+		if(waiting_SUBACK.status) {
+			sub_ack_wait *= 2;
+			send_subscribe(queued_topic);
+		}
 	}
 
 	event void Timer_SUB.fired() {
@@ -285,7 +293,7 @@ implementation {
 			locked = TRUE;
 			waiting_SUBACK.status = TRUE;
 			waiting_SUBACK.seq = SUBSCRIBE_msg->seq;
-			call Timer_wait_SUBACK.startOneShot(ACK_WAIT);
+			call Timer_wait_SUBACK.startOneShot(sub_ack_wait);
 		}
 	}
 	

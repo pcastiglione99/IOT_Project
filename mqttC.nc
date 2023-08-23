@@ -22,7 +22,7 @@
 
 #define DEFAULT_ACK_WAIT 500
 #define MAX_SUB_WAIT 5000
-#define MAX_PUB_WAIT 5000
+#define MAX_PUB_WAIT 10000
 
 
 module mqttC @safe() {
@@ -43,56 +43,64 @@ module mqttC @safe() {
 }
 
 implementation {
-	message_t packet;
-	bool locked;
-	uint16_t time_delays[N_CLIENTS]={61,173,267,371,479,583,689,799};
-	bool connection[N_CLIENTS];
-	bool subscription[N_TOPICS][N_CLIENTS];
-	uint32_t conn_ack_wait = DEFAULT_ACK_WAIT;
-	uint32_t sub_ack_wait = DEFAULT_ACK_WAIT;
-
 	typedef struct ack_msg {
 		bool status;
 		uint32_t seq;
-	} ack_msg;
+	} Ack_msg;
 
+	typedef struct Panc_table {
+		bool connection[N_CLIENTS];
+		bool subscription[N_TOPICS][N_CLIENTS];
+	} Panc_table;
 
-	ack_msg waiting_CONNACK;
-	ack_msg waiting_SUBACK;
-	uint8_t queued_topic;
+	message_t packet;
+	bool locked;
+	uint16_t time_delays[N_CLIENTS]={61,173,267,371,479,583,689,799};
+	uint8_t n_subscription_sim[N_CLIENTS] = {2, 1, 1, 1, 1, 3, 2, 1};
+	uint8_t subscribed_sim[N_CLIENTS][N_TOPICS];
+
+	Panc_table panc_table;
+	uint32_t conn_ack_wait = DEFAULT_ACK_WAIT;
+	uint32_t sub_ack_wait = DEFAULT_ACK_WAIT;
+	Ack_msg waiting_CONNACK;
+	Ack_msg waiting_SUBACK;
+	uint8_t queued_sub_topic;
 	
 	void send_connect_to_PANC();
 	void send_subscribe(uint8_t topic);
 	void send_publish(uint8_t topic, uint16_t payload);
-	
-	
 	void create_connection(uint8_t client_ID, uint32_t seq);
 	void create_subscription(uint8_t topic, uint8_t client_ID, uint32_t seq);
 	void forward_publish(uint8_t type, uint8_t client_ID, uint8_t topic, uint16_t payload);
+	void init_panc_table(Panc_table* table);
+	bool isConnected(Panc_table* table, uint8_t ID);
+	bool isSubscribed(Panc_table* table, uint8_t topic, uint8_t ID);
 
-    void init_connect() {
+    void init_panc_table(Panc_table* table) {
     	uint16_t i;
+		uint16_t j;
     	for (i = 0; i < N_CLIENTS; i++) {
-      		connection[i] = FALSE;
+      		table->connection[i] = FALSE;
     	}
-	};
-	
-    void init_subscription(){
-    	uint16_t i;
-    	uint16_t j;
-    	for(i = 0; i < N_TOPICS; i++) {
+		for(i = 0; i < N_TOPICS; i++) {
     		for (j = 0; j < N_CLIENTS; j++) {
-      			subscription[i][j] = FALSE;
+      			table->subscription[i][j] = FALSE;
     		}
 		}
+	};
+
+	bool isConnected(Panc_table* table, uint8_t ID) {
+    	return table->connection[ID - 1];
+	};
+	bool isSubscribed(Panc_table* table, uint8_t topic, uint8_t ID) {
+    	return table->subscription[topic][ID - 1];
 	};
 	
 	event void Boot.booted() {
 		dbg("boot", "APP BOOTED.\n");
     	call AMControl.start();
     	if(TOS_NODE_ID == PANC_ID) {
-			init_connect();
-			init_subscription();
+			init_panc_table(&panc_table);
 		}
 		waiting_CONNACK.status = FALSE;
 		waiting_SUBACK.status = FALSE;
@@ -128,7 +136,7 @@ implementation {
 	  					create_subscription(msg->topic, msg->ID, msg->seq);
 	  					break;
 	  				case PUBLISH:
-						if (connection[msg->ID - 1]){
+						if (isConnected(&panc_table, msg->ID)){
 							dbg("radio_rec", "PUBLISH received from %d on topic:%d with payload:%d.\n", msg->ID, msg->topic, msg->payload);
 	  						forward_publish(msg->type, msg->ID, msg->topic, msg->payload);
 						}else{
@@ -149,8 +157,8 @@ implementation {
 							waiting_CONNACK.status = FALSE;
 							waiting_CONNACK.seq = 0;
 							conn_ack_wait = DEFAULT_ACK_WAIT;
-							call Timer_SUB.startOneShot((call Random.rand32() % MAX_SUB_WAIT) + 500);
-							call Timer_PUB.startPeriodic((call Random.rand32() % MAX_PUB_WAIT) + 500);
+							call Timer_SUB.startOneShotAt((call Random.rand32() % MAX_SUB_WAIT), 500);
+							call Timer_PUB.startPeriodicAt((call Random.rand32() % MAX_PUB_WAIT), 500);
 						}
 	  					break;
 	  				case SUBACK:
@@ -160,6 +168,13 @@ implementation {
 							waiting_SUBACK.status = FALSE;
 							waiting_SUBACK.seq = 0;
 							sub_ack_wait = DEFAULT_ACK_WAIT;
+							subscribed_sim[TOS_NODE_ID - 1][msg->topic] = 1;
+							n_subscription_sim[TOS_NODE_ID - 1]--;
+							printf("%d->%d SUBACK of topic %d\n",msg->ID, TOS_NODE_ID, msg->topic);      
+  	    					printfflush();
+							if (n_subscription_sim[TOS_NODE_ID - 1] > 0){
+								call Timer_SUB.startOneShotAt((call Random.rand32() % MAX_SUB_WAIT), 500);								 
+							}
 						}
 	  					break;
 	  				case PUBLISH:
@@ -217,7 +232,7 @@ implementation {
 		mqtt_msg_t* CONNACK_msg;
 		
 		dbg("general", "Creating connection with client %d and seq %d.\n",client_ID, seq);
-		connection[client_ID - 1] = TRUE;
+		panc_table.connection[client_ID - 1] = TRUE;
 		
 		
 		CONNACK_msg = (mqtt_msg_t*)call Packet.getPayload(&packet, sizeof(mqtt_msg_t));
@@ -240,7 +255,7 @@ implementation {
 		mqtt_msg_t* SUBACK_msg;
 		
 		dbg("general", "Creating subscription with client %d and topic %d.\n",client_ID, topic);
-		subscription[topic][client_ID - 1] = TRUE;
+		panc_table.subscription[topic][client_ID - 1] = TRUE;
 		
 		SUBACK_msg = (mqtt_msg_t*)call Packet.getPayload(&packet, sizeof(mqtt_msg_t));
 		if (SUBACK_msg == NULL) {
@@ -261,12 +276,20 @@ implementation {
 	event void Timer_wait_SUBACK.fired() {
 		if(waiting_SUBACK.status) {
 			sub_ack_wait *= 2;
-			send_subscribe(queued_topic);
+			send_subscribe(queued_sub_topic);
 		}
 	}
 
 	event void Timer_SUB.fired() {
-		send_subscribe(call Random.rand32() % N_TOPICS);
+		uint16_t new_topic = call Random.rand32() % N_TOPICS;
+		uint8_t dir = (call Random.rand32() % 2);
+		while (subscribed_sim[TOS_NODE_ID - 1][new_topic] == 1){
+			if (new_topic == 0 && dir == 0){
+				dir = 1;
+			}
+			new_topic += (dir == 0) ? -1 : 1;
+		}
+		send_subscribe(new_topic);
 	}
 
 	event void Timer_PUB.fired() {
@@ -276,7 +299,7 @@ implementation {
 	void send_subscribe(uint8_t topic) {
 		mqtt_msg_t* SUBSCRIBE_msg;
 		
-		queued_topic = topic;
+		queued_sub_topic = topic;
 	
 
 		SUBSCRIBE_msg = (mqtt_msg_t*)call Packet.getPayload(&packet, sizeof(mqtt_msg_t));
@@ -284,7 +307,7 @@ implementation {
 			return;
 		}
 		SUBSCRIBE_msg->type = SUBSCRIBE;
-		SUBSCRIBE_msg->client_ID = TOS_NODE_ID;
+		SUBSCRIBE_msg->ID = TOS_NODE_ID;
 		SUBSCRIBE_msg->topic = topic;
 		SUBSCRIBE_msg->seq = call Random.rand32(); 
 		
@@ -305,7 +328,7 @@ implementation {
 			return;
 		}
 		PUBLISH_msg->type = PUBLISH;
-		PUBLISH_msg->client_ID = TOS_NODE_ID;
+		PUBLISH_msg->ID = TOS_NODE_ID;
 		PUBLISH_msg->topic = topic;
 		PUBLISH_msg->payload = payload;
 		
@@ -332,7 +355,7 @@ implementation {
   	    printfflush();
 		
 		for(i = 1; i <= N_CLIENTS; i++) {
-			if(subscription[topic][i - 1]) {
+			if(isSubscribed(&panc_table, topic, i)) {
 				if (call AMSend.send(i , &packet, sizeof(mqtt_msg_t)) == SUCCESS) {
 					dbg("radio_send", "Send PUBLISH packet to %d.\n",i);
 					locked = TRUE;

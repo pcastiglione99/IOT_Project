@@ -205,14 +205,6 @@
     </mote>
   </simulation>
   <plugin>
-    org.contikios.cooja.plugins.SimControl
-    <width>280</width>
-    <z>0</z>
-    <height>160</height>
-    <location_x>400</location_x>
-    <location_y>0</location_y>
-  </plugin>
-  <plugin>
     org.contikios.cooja.plugins.Visualizer
     <plugin_config>
       <moterelations>true</moterelations>
@@ -223,7 +215,7 @@
       <viewport>3.193978251931525 0.0 0.0 3.193978251931525 29.485575962403846 13.301087403423741</viewport>
     </plugin_config>
     <width>400</width>
-    <z>2</z>
+    <z>1</z>
     <height>400</height>
     <location_x>1</location_x>
     <location_y>1</location_y>
@@ -236,7 +228,7 @@
       <coloring />
     </plugin_config>
     <width>680</width>
-    <z>1</z>
+    <z>2</z>
     <height>240</height>
     <location_x>400</location_x>
     <location_y>160</location_y>
@@ -259,7 +251,7 @@
       <zoomfactor>500.0</zoomfactor>
     </plugin_config>
     <width>1080</width>
-    <z>5</z>
+    <z>4</z>
     <height>166</height>
     <location_x>0</location_x>
     <location_y>531</location_y>
@@ -271,7 +263,7 @@
       <decorations>true</decorations>
     </plugin_config>
     <width>400</width>
-    <z>4</z>
+    <z>3</z>
     <height>160</height>
     <location_x>680</location_x>
     <location_y>0</location_y>
@@ -281,10 +273,10 @@
     <mote_arg>8</mote_arg>
     <plugin_config>
       <port>60001</port>
-      <bound>true</bound>
+      <bound>false</bound>
     </plugin_config>
     <width>362</width>
-    <z>3</z>
+    <z>0</z>
     <height>116</height>
     <location_x>710</location_x>
     <location_y>30</location_y>

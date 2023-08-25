@@ -79,15 +79,56 @@ Initiates the process of sending a PUBLISH message.
 Received messages are handled according to their type:
 \subsubsection*{PANC}
 \begin{itemize}
-	\item{\textbf{}}
-	\item{\textbf{}}
-	\item{\textbf{}}
+\item{\textbf{\texttt{CONNECT Message}:}}\\
+The handler calls the \texttt{create\_connection} function, which updates the texttt{Panc\_table} to mark the client as connected and sends a CONNACK acknowledgment back to the client.
+The acknowledgment confirms the successful establishment of the connection between the client and the broker.
+\item{\textbf{\texttt{SUBSCRIBE Message}:}}\\
+The handler calls the \texttt{create\_subscription} function, which updates the \texttt{Panc\_table} to mark the client as subscribed to the specified topic.
+The handler sends a SUBACK acknowledgment back to the client, confirming the successful subscription to the requested topic.
+\item{\textbf{\texttt{PUBLISH Message}:}}\\
+The handler calls the \texttt{forward\_publish} function, which checks if the sender client is connected and forwards the message to all subscribed clients for the specified topic.
+The handler iterates through the subscribed clients and sends the PUBLISH message to each subscribed client.
 \end{itemize}
 \subsubsection*{MOTE}
 \begin{itemize}
-	\item{\textbf{}}
-	\item{\textbf{}}
-	\item{\textbf{}}
+\item{\textbf{\texttt{CONNACK Message}:}}\\
+If the client was waiting for a CONNACK acknowledgment, the handler updates the acknowledgment status and performs actions such as initializing timers for subscription and publishing tasks.
+\item{\textbf{\texttt{SUBACK Message}:}}\\
+If the client was waiting for a SUBACK acknowledgment, the handler updates the acknowledgment status and marks the topic as subscribed.
+The handler also decrements the remaining subscription count for the client.
 \end{itemize}
+\section*{Simulation}
+We leveraged on both simulation envoironments.
+\subsection*{TOSSIM}
+\lstinputlisting[language=TeX]{files/tossim_sim_latex.log}
+\subsection*{COOJA}
+We create a simulation in the Cooja environment with nine motes grouped in a star topology. 
+Among these, we setup the ninth mote, PanC, to function as a serial socket server on port 60001. 
+
+\begin{figure}[h]
+  \includegraphics[width=1\textwidth]{images/publish_messages_cooja.png}
+  \caption{Cooja log of publish messages sent by the PANC to Node-Red}
+\end{figure}
+
+\begin{figure}[h]
+  \includegraphics[width=1\textwidth]{images/serial_server_socket.png}
+  \caption{Cooja simulation control and Serial Socket setup}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{images/temperature.png}
+  \caption{Temperature chart}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{images/humidity.png}
+  \caption{Humidity chart}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{images/luminosity.png}
+  \caption{Luminosity chart}
+\end{figure}
 
 \end{document}

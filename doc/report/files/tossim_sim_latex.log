@@ -1,0 +1,47 @@
+DEBUG (9): APP BOOTED.
+DEBUG (8): APP BOOTED.
+DEBUG (2): APP BOOTED.
+DEBUG (6): APP BOOTED.
+DEBUG (5): APP BOOTED.
+DEBUG (1): APP BOOTED.
+DEBUG (4): APP BOOTED.
+DEBUG (3): APP BOOTED.
+DEBUG (7): APP BOOTED.
+DEBUG (2): Radio started.
+DEBUG (9): Radio started.
+DEBUG (8): Radio started.
+DEBUG (7): Radio started.
+DEBUG (3): Radio started.
+DEBUG (6): Radio started.
+DEBUG (4): Radio started.
+DEBUG (1): Radio started.
+DEBUG (5): Radio started.
+DEBUG (1): Send CONNECT packet
+DEBUG (9): CONNECT received from 1 and seq 33614.
+DEBUG (9): Creating connection with client 1 and seq 33614.
+DEBUG (9): Send CONNACK packet to 1.
+DEBUG (1): CONNACK received with seq 33614.
+DEBUG (1): Connected to PANC.
+...
+...
+DEBUG (1): Send SUBSCRIBE packet
+DEBUG (9): SUBSCRIBE received from 1 with topic 1 and seq 940422544.
+DEBUG (9): Creating subscription with client 1 and topic 1.
+DEBUG (9): Send SUBACK packet to 1.
+DEBUG (1): SUBACK received with seq.
+DEBUG (1): Subscribed to a topic 1.
+DEBUG (1): Send SUBSCRIBE packet
+DEBUG (9): SUBSCRIBE received from 1 with topic 0 and seq 1866991771.
+DEBUG (9): Creating subscription with client 1 and topic 0.
+DEBUG (9): Send SUBACK packet to 1.
+DEBUG (1): SUBACK received with seq 1866991771.
+DEBUG (1): Subscribed to a topic 0.
+DEBUG (2): Send SUBSCRIBE packet
+...
+...
+DEBUG (4): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:72.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (5): PUBLISH received on TOPIC:1 VALUE:72.
+...
+...

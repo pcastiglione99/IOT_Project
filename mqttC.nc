@@ -162,7 +162,7 @@ implementation {
 						}
 	  					break;
 	  				case SUBACK:
-	  					dbg("radio_rec", "SUBACK received with seq.\n", msg->seq);
+	  					dbg("radio_rec", "SUBACK received with seq %d.\n", msg->seq);
 						if (waiting_SUBACK.status == TRUE && waiting_SUBACK.seq == msg->seq){
 							dbg("general", "Subscribed to a topic %d.\n", msg->topic);
 							waiting_SUBACK.status = FALSE;
@@ -170,8 +170,6 @@ implementation {
 							sub_ack_wait = DEFAULT_ACK_WAIT;
 							subscribed_sim[TOS_NODE_ID - 1][msg->topic] = 1;
 							n_subscription_sim[TOS_NODE_ID - 1]--;
-							printf("%d->%d SUBACK of topic %d\n",msg->ID, TOS_NODE_ID, msg->topic);      
-  	    					printfflush();
 							if (n_subscription_sim[TOS_NODE_ID - 1] > 0){
 								call Timer_SUB.startOneShotAt((call Random.rand32() % MAX_SUB_WAIT), 500);								 
 							}
@@ -262,6 +260,7 @@ implementation {
 			return;
 		}
 		SUBACK_msg->type = SUBACK;
+		SUBACK_msg->ID = TOS_NODE_ID;
 		SUBACK_msg->seq = seq;
 		SUBACK_msg->topic = topic;
 		
@@ -351,8 +350,8 @@ implementation {
 		PUBLISH_msg->ID = PANC_ID;
 		PUBLISH_msg->topic = topic;
 		PUBLISH_msg->payload = payload;
-		printf("%d,%d\n",topic,payload);      
-  	    printfflush();
+		// printf("%d,%d\n",topic,payload);      
+  	    // printfflush();
 		
 		for(i = 1; i <= N_CLIENTS; i++) {
 			if(isSubscribed(&panc_table, topic, i)) {

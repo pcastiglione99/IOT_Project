@@ -44,7 +44,8 @@ print "Initializing simulator....";
 t.init();
 
 
-out = sys.stdout;
+#out = sys.stdout;
+out = open('tossim_sim.log', 'w')
 
 #Add debug channel
 print "Activate debug message on channel init"
@@ -173,7 +174,9 @@ for i in range(1, MOTES + 1):
 
 print "Start simulation with TOSSIM! \n\n\n";
 
-for i in range(0, 10000):
+for i in range(0, 3000):
     t.runNextEvent();
 	
+out.close();
 print "\n\n\nSimulation finished!";
+

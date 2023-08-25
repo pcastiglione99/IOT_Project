@@ -17,8 +17,8 @@ implementation {
 
   components ActiveMessageC;
   components RandomC;
-  components SerialPrintfC;
-  components SerialStartC;
+  // components SerialPrintfC;
+  // components SerialStartC;
   
   App.Boot -> MainC.Boot;
   App.Receive -> AMReceiverC;

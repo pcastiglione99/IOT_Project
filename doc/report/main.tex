@@ -17,28 +17,73 @@
 
 \subsection*{Variables}
 \begin{itemize}
-  \item{\texttt{}}
-  \item{\texttt{}}
-  \item{\texttt{}}
-  \item{\texttt{}}
+\item{\textbf{\texttt{locked}:}}\\
+This boolean variable is used to indicate whether a message sending operation is currently in progress. When a message is being sent, this variable is set to TRUE, preventing further message sending until the current operation completes.
+\item{\textbf{\texttt{time\_delays[N\_CLIENTS]}:}}\\
+This array holds time delay values associated with each client ID. It's used for setting specific time delays before certain actions occur for each client.
+\item{\textbf{\texttt{n\_subscription\_sim[N\_CLIENTS]}:}}\\
+This array holds the number of remaining subscriptions each client needs to make. It's decremented as clients subscribe to topics.
+\item{\textbf{\texttt{subscribed\_sim[N\_CLIENTS][N\_TOPICS]}:}}\\
+This 2D array indicates whether a client is subscribed to a particular topic. It's used to track the subscription status of each client for different topics.
+\item{\textbf{\texttt{panc\_table}:}}\\
+This structure represents the table used to keep track of client connections and topic subscriptions.
+\item{\textbf{\texttt{conn\_ack\_wait}:}}\\
+This variable defines the initial waiting time for a CONNACK acknowledgment response from the broker. 
+\item{\textbf{\texttt{sub\_ack\_wait}:}}\\
+This variable defines the initial waiting time for a SUBACK acknowledgment response from the broker.
+\item{\textbf{\texttt{waiting\_CONNACK}:}}\\
+This structure is used to track the status and sequence number of the CONNECT acknowledgment response that the client is waiting for.
+\item{\textbf{\texttt{waiting\_SUBACK}:}}\\
+Similarly to \texttt{waiting\_CONNACK}, this structure tracks the status and sequence number of the SUBACK acknowledgment response that the client is waiting for.
+\item{\textbf{\texttt{queued\_sub\_topic}:}}\\
+This variable holds the topic that is currently queued for subscription. It's used to ensure that the correct topic is subscribed to after a timer event fires.
+
 \end{itemize}
 
 \subsection*{Functions}
 \begin{itemize}
-  \item{\texttt{}}
-  \item{\texttt{}}
-  \item{\texttt{}}
+\item{\textbf{\texttt{init\_panc\_table}:}}\\
+Initializes the Panc table structure to track client connections and subscriptions.
+\item{\textbf{\texttt{send\_connect\_to\_PANC}:}}\\
+Sends a CONNECT message to the PAN Coordinator to establish a connection.
+\item{\textbf{\texttt{send\_subscribe}:}}\\
+Sends a SUBSCRIBE message to the PAN Corrdinator to subscribe to a specified topic.
+\item{\textbf{\texttt{send\_publish}:}}
+\item{\textbf{\texttt{create\_connection}:}}\\
+Handles the creation of a connection and sends a CONNACK response to the client.
+\item{\textbf{\texttt{create\_subscription}:}}\\
+Handles the creation of a subscription and sends a SUBACK response to the client.
+\item{\textbf{\texttt{forward\_publish}:}}\\
+Forwards PUBLISH messages to subscribed clients.
+\item{\textbf{\texttt{isConnected}:}}\\
+Checks if a specific client is connected based on the Panc table.
+\item{\textbf{\texttt{isSubscribed}:}}\\
+Checks if a specific client is subscribed to a topic based on the Panc table.
 \end{itemize}
 
 \subsection*{Timers}
 \begin{itemize}
-  \item{\texttt{}}
-  \item{\texttt{}}
-  \item{\texttt{}}
+\item{\textbf{\texttt{Timer0}:}}\\
+Initiates the process of sending a CONNECT message to establis a connection.
+\item{\textbf{\texttt{Timer\_wait\_CONNACK}:}}\\
+Handles timeouts and retries for waiting for a CONNACK response.
+\item{\textbf{\texttt{Timer\_wait\_SUBACK}:}}\\
+Handles timeouts and retries for waiting for a SUBACK response.
+\item{\textbf{\texttt{Timer\_SUB}:}}\\
+Initiates the process of sending a SUBSCRIBE message to subscribe to a topic.
+\item{\textbf{\texttt{Timer\_PUB}:}}\\
+Initiates the process of sending a PUBLISH message.
 \end{itemize}
 
 \subsection*{Receive Event}
 Received messages are handled according to their type:
+\subsubsection*{PANC}
+\begin{itemize}
+	\item{\textbf{}}
+	\item{\textbf{}}
+	\item{\textbf{}}
+\end{itemize}
+\subsubsection*{MOTE}
 \begin{itemize}
 	\item{\textbf{}}
 	\item{\textbf{}}

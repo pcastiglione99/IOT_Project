@@ -1,0 +1,39 @@
+# Fdb version 4
+["xdvipdfmx"] 1692968921 "main.xdv" "main.pdf" "main" 1692968921 0
+  "main.xdv" 1692968921 33032 d15dc8ade52b653e2b79c98e6355ff2d "xelatex"
+  (generated)
+  "main.pdf"
+  (rewritten before read)
+["xelatex"] 1692968921 "main.tex" "main.xdv" "main" 1692968921 0
+  "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1689853683 1524 4414a8315f39513458b80dfc63bff03a ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1689853683 1512 f21f83efb36853c0b70002322c1ab3ad ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1689853683 1520 eccf95517727cb11801f4f1aee3a21b4 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1689853683 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1689853683 1300 b62933e007d01cfd073f79b963c01526 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1689853683 1292 21c1c5bfeaebccffdb478fd231a0997d ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1689853683 1124 6c73e740cf17375f03eec0ee63599741 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1689853683 1116 933a60c408fc0a863a92debe84b2d294 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1689853683 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/share/texmf-dist/tex/latex/base/article.cls" 1689853683 20144 d5ecf0a5140c8d8d8b72cbe86e320eff ""
+  "/usr/share/texmf-dist/tex/latex/base/size11.clo" 1689853683 8464 63bf71cc1214ffdd38288da73a7ca182 ""
+  "/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd" 1689853683 2430 8418b3f1835e588625becbcac4dbce56 ""
+  "/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1689853683 1224 978390e9c2234eab29404bc21b268d1e ""
+  "/usr/share/texmf-dist/tex/latex/graphics-def/xetex.def" 1689853683 14788 1dde73f396dd97d88c838bee2a352abe ""
+  "/usr/share/texmf-dist/tex/latex/graphics/graphics.sty" 1689853683 18387 8f900a490197ebaf93c02ae9476d4b09 ""
+  "/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty" 1689853683 8010 a8d949cbdbc5c983593827c9eec252e1 ""
+  "/usr/share/texmf-dist/tex/latex/graphics/keyval.sty" 1689853683 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
+  "/usr/share/texmf-dist/tex/latex/graphics/trig.sty" 1689853683 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
+  "/usr/share/texmf-dist/tex/latex/l3backend/l3backend-xetex.def" 1689853683 32346 879686206fa618f4f5073ad4bd48feda ""
+  "/usr/share/texmf-dist/tex/latex/listings/listings.cfg" 1689853683 1829 d8258b7d94f5f955e70c623e525f9f45 ""
+  "/usr/share/texmf-dist/tex/latex/listings/listings.sty" 1689853683 80947 75a96bb4c9f40ae31d54a01d924df2ff ""
+  "/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty" 1689853683 77021 d05e9115c67855816136d82929db8892 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1690351131 9276499 85fdb843d1227668674b87382d5c962a ""
+  "main.aux" 1692968921 32 ab05033ccbb38b00a31b200ccedf8001 "xelatex"
+  "main.tex" 1692968920 4266 178d21b09cfb904c1b590d0c2b4c5b69 ""
+  (generated)
+  "main.aux"
+  "main.log"
+  "main.xdv"
+  (rewritten before read)

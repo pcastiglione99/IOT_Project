@@ -350,8 +350,8 @@ implementation {
 		PUBLISH_msg->ID = PANC_ID;
 		PUBLISH_msg->topic = topic;
 		PUBLISH_msg->payload = payload;
-		// printf("%d,%d\n",topic,payload);      
-  	    // printfflush();
+		printf("%d,%d\n",topic,payload);      
+  	    printfflush();
 		
 		for(i = 1; i <= N_CLIENTS; i++) {
 			if(isSubscribed(&panc_table, topic, i)) {

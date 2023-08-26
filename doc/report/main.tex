@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}
-\usepackage{graphicx,listings}
+\usepackage{graphicx,listings, amsmath, hyperref}
 \graphicspath{ {./images/} }
 \title{\textbf{IoT Final Project 2023 - Project 1}}
 \author{
@@ -13,8 +13,16 @@
 \begin{document}
 \maketitle
 \section*{mqtt.h}
-\section*{mqttC.nc}
+The struct mqtt\_msg is used to define the message format to be sent between nodes. It contains the following attributes:
+\begin{itemize}
+  \item \texttt{type}
+  \item \texttt{ID} (sender Node ID)
+  \item \texttt{topic}
+  \item \texttt{payload}
+  \item \texttt{seq}, 32-bit number, used to identify a specific msg-ack sequence
+\end{itemize}
 
+\section*{mqttC.nc}
 \subsection*{Variables}
 \begin{itemize}
 \item{\textbf{\texttt{locked}:}}\\
@@ -47,8 +55,9 @@ Initializes the Panc table structure to track client connections and subscriptio
 \item{\textbf{\texttt{send\_connect\_to\_PANC}:}}\\
 Sends a CONNECT message to the PAN Coordinator to establish a connection.
 \item{\textbf{\texttt{send\_subscribe}:}}\\
-Sends a SUBSCRIBE message to the PAN Corrdinator to subscribe to a specified topic.
+Sends a SUBSCRIBE message to the PAN Coordinator to subscribe to a specified topic.
 \item{\textbf{\texttt{send\_publish}:}}
+Sends a PUBLISH message to the PAN Coordinator to publish on a specified topic.
 \item{\textbf{\texttt{create\_connection}:}}\\
 Handles the creation of a connection and sends a CONNACK response to the client.
 \item{\textbf{\texttt{create\_subscription}:}}\\
@@ -106,29 +115,41 @@ We create a simulation in the Cooja environment with nine motes grouped in a sta
 Among these, we setup the ninth mote, PanC, to function as a serial socket server on port 60001. 
 
 \begin{figure}[h]
+  \centering
   \includegraphics[width=1\textwidth]{images/publish_messages_cooja.png}
   \caption{Cooja log of publish messages sent by the PANC to Node-Red}
+  \smallskip
+  \includegraphics[width=0.6\textwidth]{images/network.png}
+  \caption{Network topology}
+  \medskip
+  \includegraphics[width=0.6\textwidth]{images/serial_server_socket.png}
+  \caption{Cooja simulation control and Serial Socket setup}
 \end{figure}
 
+
+\subsection*{Node-Red}
+The Node-Red flow is indeed straighforward, it contains a network interface that intercept local input, 
+and pass it towards the split function. Then the function divides the \texttt{PUBLISH} message in the 
+form \texttt{Topic,Payload} to craft a proper MQTT publish request understandable by our 
+\href{https://thingspeak.com/channels/2240116}{public ThingSpeak channel}, with 
+topic \texttt{channels/channel\_id/publish} and payload \texttt{status=MQTTPUBLISH\&fieldX=data} 
 \begin{figure}[h]
-  \includegraphics[width=1\textwidth]{images/serial_server_socket.png}
-  \caption{Cooja simulation control and Serial Socket setup}
+  \centering
+  \includegraphics[width=1\textwidth]{images/node_red.png}
+  \caption{Node-Red flow}
 \end{figure}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{images/temperature.png}
   \caption{Temperature chart}
-\end{figure}
-\begin{figure}[h]
-  \centering
+  \medskip
   \includegraphics[width=0.6\textwidth]{images/humidity.png}
   \caption{Humidity chart}
-\end{figure}
-\begin{figure}[h]
-  \centering
+  \medskip
   \includegraphics[width=0.6\textwidth]{images/luminosity.png}
   \caption{Luminosity chart}
 \end{figure}
+
 
 \end{document}

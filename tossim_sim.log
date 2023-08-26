@@ -1,0 +1,1380 @@
+DEBUG (9): APP BOOTED.
+DEBUG (8): APP BOOTED.
+DEBUG (2): APP BOOTED.
+DEBUG (6): APP BOOTED.
+DEBUG (5): APP BOOTED.
+DEBUG (1): APP BOOTED.
+DEBUG (4): APP BOOTED.
+DEBUG (3): APP BOOTED.
+DEBUG (7): APP BOOTED.
+DEBUG (2): Radio started.
+DEBUG (9): Radio started.
+DEBUG (8): Radio started.
+DEBUG (7): Radio started.
+DEBUG (3): Radio started.
+DEBUG (6): Radio started.
+DEBUG (4): Radio started.
+DEBUG (1): Radio started.
+DEBUG (5): Radio started.
+DEBUG (1): Send CONNECT packet
+DEBUG (9): CONNECT received from 1 and seq 33614.
+DEBUG (9): Creating connection with client 1 and seq 33614.
+DEBUG (9): Send CONNACK packet to 1.
+DEBUG (1): CONNACK received with seq 33614.
+DEBUG (1): Connected to PANC.
+DEBUG (2): Send CONNECT packet
+DEBUG (9): CONNECT received from 2 and seq 50421.
+DEBUG (9): Creating connection with client 2 and seq 50421.
+DEBUG (9): Send CONNACK packet to 2.
+DEBUG (2): CONNACK received with seq 50421.
+DEBUG (2): Connected to PANC.
+DEBUG (3): Send CONNECT packet
+DEBUG (9): CONNECT received from 3 and seq 67228.
+DEBUG (9): Creating connection with client 3 and seq 67228.
+DEBUG (9): Send CONNACK packet to 3.
+DEBUG (3): CONNACK received with seq 67228.
+DEBUG (3): Connected to PANC.
+DEBUG (4): Send CONNECT packet
+DEBUG (5): Send CONNECT packet
+DEBUG (9): CONNECT received from 5 and seq 100842.
+DEBUG (9): Creating connection with client 5 and seq 100842.
+DEBUG (9): Send CONNACK packet to 5.
+DEBUG (5): CONNACK received with seq 100842.
+DEBUG (5): Connected to PANC.
+DEBUG (6): Send CONNECT packet
+DEBUG (9): CONNECT received from 6 and seq 117649.
+DEBUG (9): Creating connection with client 6 and seq 117649.
+DEBUG (9): Send CONNACK packet to 6.
+DEBUG (6): CONNACK received with seq 117649.
+DEBUG (6): Connected to PANC.
+DEBUG (7): Send CONNECT packet
+DEBUG (9): CONNECT received from 7 and seq 134456.
+DEBUG (9): Creating connection with client 7 and seq 134456.
+DEBUG (9): Send CONNACK packet to 7.
+DEBUG (7): CONNACK received with seq 134456.
+DEBUG (7): Connected to PANC.
+DEBUG (8): Send CONNECT packet
+DEBUG (9): CONNECT received from 8 and seq 151263.
+DEBUG (9): Creating connection with client 8 and seq 151263.
+DEBUG (9): Send CONNACK packet to 8.
+DEBUG (8): CONNACK received with seq 151263.
+DEBUG (8): Connected to PANC.
+DEBUG (4): Send CONNECT packet
+DEBUG (9): CONNECT received from 4 and seq 1412376245.
+DEBUG (9): Creating connection with client 4 and seq 1412376245.
+DEBUG (9): Send CONNACK packet to 4.
+DEBUG (4): CONNACK received with seq 1412376245.
+DEBUG (4): Connected to PANC.
+DEBUG (1): Send SUBSCRIBE packet
+DEBUG (9): SUBSCRIBE received from 1 with topic 1 and seq 940422544.
+DEBUG (9): Creating subscription with client 1 and topic 1.
+DEBUG (9): Send SUBACK packet to 1.
+DEBUG (1): SUBACK received with seq 940422544.
+DEBUG (1): Subscribed to a topic 1.
+DEBUG (1): Send SUBSCRIBE packet
+DEBUG (9): SUBSCRIBE received from 1 with topic 0 and seq 1866991771.
+DEBUG (9): Creating subscription with client 1 and topic 0.
+DEBUG (9): Send SUBACK packet to 1.
+DEBUG (1): SUBACK received with seq 1866991771.
+DEBUG (1): Subscribed to a topic 0.
+DEBUG (2): Send SUBSCRIBE packet
+DEBUG (3): Send SUBSCRIBE packet
+DEBUG (4): Send SUBSCRIBE packet
+DEBUG (9): SUBSCRIBE received from 3 with topic 1 and seq 1880845088.
+DEBUG (9): Creating subscription with client 3 and topic 1.
+DEBUG (9): Send SUBACK packet to 3.
+DEBUG (3): SUBACK received with seq 1880845088.
+DEBUG (3): Subscribed to a topic 1.
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:49.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (3): PUBLISH received on TOPIC:1 VALUE:49.
+DEBUG (2): Send SUBSCRIBE packet
+DEBUG (9): SUBSCRIBE received from 2 with topic 2 and seq 303082632.
+DEBUG (9): Creating subscription with client 2 and topic 2.
+DEBUG (9): Send SUBACK packet to 2.
+DEBUG (2): SUBACK received with seq 303082632.
+DEBUG (2): Subscribed to a topic 2.
+DEBUG (5): Send SUBSCRIBE packet
+DEBUG (4): Send SUBSCRIBE packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:53.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (2): PUBLISH received on TOPIC:2 VALUE:53.
+DEBUG (6): Send SUBSCRIBE packet
+DEBUG (9): SUBSCRIBE received from 6 with topic 2 and seq 1143995257.
+DEBUG (9): Creating subscription with client 6 and topic 2.
+DEBUG (9): Send SUBACK packet to 6.
+DEBUG (6): SUBACK received with seq 1143995257.
+DEBUG (6): Subscribed to a topic 2.
+DEBUG (5): Send SUBSCRIBE packet
+DEBUG (4): Send PUBLISH packet
+DEBUG (6): Send SUBSCRIBE packet
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:86.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (4): Send SUBSCRIBE packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:21.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (6): PUBLISH received on TOPIC:2 VALUE:21.
+DEBUG (6): Send SUBSCRIBE packet
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:94.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:94.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:40.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (3): PUBLISH received on TOPIC:1 VALUE:40.
+DEBUG (5): Send SUBSCRIBE packet
+DEBUG (4): Send PUBLISH packet
+DEBUG (9): SUBSCRIBE received from 5 with topic 1 and seq 157170680.
+DEBUG (9): Creating subscription with client 5 and topic 1.
+DEBUG (9): Send SUBACK packet to 5.
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:45.
+DEBUG (5): PUBLISH received on TOPIC:1 VALUE:45.
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:80.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:80.
+DEBUG (7): Send SUBSCRIBE packet
+DEBUG (9): SUBSCRIBE received from 7 with topic 1 and seq 1614206529.
+DEBUG (9): Creating subscription with client 7 and topic 1.
+DEBUG (9): Send SUBACK packet to 7.
+DEBUG (7): SUBACK received with seq 1614206529.
+DEBUG (7): Subscribed to a topic 1.
+DEBUG (7): Send SUBSCRIBE packet
+DEBUG (9): SUBSCRIBE received from 7 with topic 2 and seq 1025516143.
+DEBUG (9): Creating subscription with client 7 and topic 2.
+DEBUG (9): Send SUBACK packet to 7.
+DEBUG (7): SUBACK received with seq 1025516143.
+DEBUG (7): Subscribed to a topic 2.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:33.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (7): PUBLISH received on TOPIC:2 VALUE:33.
+DEBUG (4): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:60.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:60.
+DEBUG (8): Send SUBSCRIBE packet
+DEBUG (9): SUBSCRIBE received from 8 with topic 2 and seq 2084417801.
+DEBUG (9): Creating subscription with client 8 and topic 2.
+DEBUG (9): Send SUBACK packet to 8.
+DEBUG (8): SUBACK received with seq 2084417801.
+DEBUG (8): Subscribed to a topic 2.
+DEBUG (6): Send SUBSCRIBE packet
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:86.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:86.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:48.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:48.
+DEBUG (4): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:4.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:4.
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:27.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:27.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:26.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:26.
+DEBUG (4): Send SUBSCRIBE packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:12.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:12.
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:75.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:75.
+DEBUG (2): Send PUBLISH packet
+DEBUG (5): Send SUBSCRIBE packet
+DEBUG (4): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:0 with payload:95.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:95.
+DEBUG (9): SUBSCRIBE received from 5 with topic 1 and seq 162732950.
+DEBUG (9): Creating subscription with client 5 and topic 1.
+DEBUG (9): Send SUBACK packet to 5.
+DEBUG (5): SUBACK received with seq 162732950.
+DEBUG (5): Subscribed to a topic 1.
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:85.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:85.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:87.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:87.
+DEBUG (4): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:86.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:86.
+DEBUG (6): Send SUBSCRIBE packet
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:58.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:58.
+DEBUG (5): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:19.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:19.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:36.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:36.
+DEBUG (4): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:97.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:97.
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:57.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:57.
+DEBUG (5): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:49.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:49.
+DEBUG (2): Send PUBLISH packet
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 1 on topic:0 with payload:80.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:13.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:13.
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:47.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:47.
+DEBUG (5): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:0 with payload:52.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:52.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:77.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:77.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:37.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:9.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:9.
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:69.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:69.
+DEBUG (5): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:77.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:77.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:52.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:52.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:54.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 1 on topic:0 with payload:74.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:74.
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:37.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:37.
+DEBUG (5): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:74.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:74.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:87.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:87.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:7.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:7.
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:7.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:7.
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:8.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:8.
+DEBUG (5): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:72.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:72.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:11.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:11.
+DEBUG (4): Send SUBSCRIBE packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:72.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:80.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:80.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:79.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:79.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (5): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:0 with payload:26.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:26.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:84.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:84.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:39.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:6.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:6.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:54.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:54.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:1 with payload:25.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:22.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:22.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:7.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 3 on topic:0 with payload:76.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:76.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:1.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:1.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 1 on topic:0 with payload:71.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:25.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:25.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:96.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:96.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send SUBSCRIBE packet
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:7.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 8 on topic:2 with payload:19.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:19.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:0 with payload:57.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 3 on topic:1 with payload:98.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:98.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:99.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:99.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:81.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:81.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:27.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 3 on topic:0 with payload:13.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:13.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:53.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:53.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:91.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:91.
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:98.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:98.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:79.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:79.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:2 with payload:27.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:22.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:22.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:16.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:16.
+DEBUG (4): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:71.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:32.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:32.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:83.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:83.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:61.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:61.
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:72.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:72.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:68.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 3 on topic:0 with payload:48.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:48.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:22.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:22.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 1 on topic:0 with payload:47.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:73.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:73.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:84.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:84.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:1 with payload:14.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:2.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:14.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:14.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:98.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:98.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:86.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:86.
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:82.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:82.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:1 with payload:13.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 5 on topic:0 with payload:51.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:51.
+DEBUG (2): Send PUBLISH packet
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:92.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:92.
+DEBUG (9): PUBLISH received from 1 on topic:0 with payload:73.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:73.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:92.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:92.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:1 with payload:46.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:46.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:79.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:79.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:87.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:87.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:2 with payload:11.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:11.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:24.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:24.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:36.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 1 on topic:0 with payload:11.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:11.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:47.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:47.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:1 with payload:91.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:72.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:72.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:97.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 3 on topic:1 with payload:99.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:99.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:12.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:2.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:2.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:3.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:3.
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:2.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:2.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:0 with payload:28.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:28.
+DEBUG (9): PUBLISH received from 3 on topic:1 with payload:96.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:96.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:32.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:32.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:71.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:39.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:39.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:45.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:45.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:25.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:97.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:97.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:70.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:70.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:40.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:23.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:23.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:97.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:97.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:92.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:14.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:14.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:11.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 3 on topic:2 with payload:47.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:47.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:94.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:94.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:0 with payload:65.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:65.
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:9.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:9.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:3.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:3.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:14.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:14.
+DEBUG (9): PUBLISH received from 8 on topic:1 with payload:8.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:8.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:1 with payload:1.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:48.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:48.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:9.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:9.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:58.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:58.
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:88.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:88.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:89.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:89.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:76.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:45.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:45.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:24.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 3 on topic:2 with payload:46.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:46.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:51.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:51.
+DEBUG (4): Send SUBSCRIBE packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:0 with payload:31.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:55.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:9.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:9.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:35.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:98.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:98.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:1 with payload:22.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:17.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:17.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:72.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:72.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:0 with payload:27.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:27.
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:16.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:16.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:45.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:45.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:14.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 8 on topic:1 with payload:9.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:9.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:2 with payload:75.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:40.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:40.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:12.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:12.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:84.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:84.
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:36.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:36.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:89.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:89.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send SUBSCRIBE packet
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:52.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:55.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:55.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:2 with payload:68.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:41.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:41.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:24.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:24.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:87.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:87.
+DEBUG (9): PUBLISH received from 1 on topic:0 with payload:48.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:48.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:58.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:58.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:48.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:30.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:30.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:18.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 3 on topic:0 with payload:78.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:78.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:99.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:99.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:45.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:13.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:13.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:26.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:26.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:2 with payload:17.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:17.
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:58.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:58.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:2 with payload:46.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:46.
+DEBUG (9): PUBLISH received from 5 on topic:0 with payload:55.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:55.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:96.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:96.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:97.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:97.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:97.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:17.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:17.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:19.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:52.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:52.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:45.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:45.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:84.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:51.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:51.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:50.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:50.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:2 with payload:27.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:27.
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:77.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:77.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:24.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 3 on topic:0 with payload:29.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:29.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:95.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:95.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:55.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:67.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:67.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:51.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:51.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:93.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 8 on topic:1 with payload:78.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:1 with payload:63.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:63.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:8.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:8.
+DEBUG (4): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:0 with payload:93.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): Send PUBLISH packet
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:93.
+DEBUG (9): PUBLISH received from 1 on topic:0 with payload:54.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:54.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:11.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:11.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:2 with payload:71.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:71.
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:4.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:4.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:13.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:13.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:0 with payload:78.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:9.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:9.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:47.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:47.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:67.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:67.
+DEBUG (9): PUBLISH received from 8 on topic:1 with payload:28.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:28.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:92.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:92.
+DEBUG (9): PUBLISH received from 3 on topic:2 with payload:25.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:25.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:82.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:82.
+DEBUG (4): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:0 with payload:66.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:49.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:49.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:4.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:4.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:33.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:33.
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:94.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:94.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:0 with payload:43.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:43.
+DEBUG (9): PUBLISH received from 3 on topic:2 with payload:49.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:49.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:9.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:9.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:86.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:86.
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:70.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:70.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:79.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:79.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:2 with payload:22.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:27.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:27.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:1 with payload:79.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:90.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:90.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:38.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:38.
+DEBUG (4): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:43.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:83.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:83.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:22.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:22.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:24.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 8 on topic:1 with payload:53.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:53.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:16.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 3 on topic:2 with payload:47.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:47.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:18.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:18.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:11.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 1 on topic:0 with payload:79.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:79.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:95.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:95.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:2 with payload:33.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:33.
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:14.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:14.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:26.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:26.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:0.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:0.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:96.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:96.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:99.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:99.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:0 with payload:64.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 3 on topic:0 with payload:63.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:63.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:69.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:85.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:85.
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:83.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:83.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:86.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:86.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:76.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 6 on topic:1 with payload:49.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:49.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:99.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:99.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:32.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:32.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:18.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:94.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:94.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:29.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 3 on topic:1 with payload:71.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:71.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:4.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:4.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:76.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 1 on topic:0 with payload:87.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:87.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:75.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:75.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:1 with payload:21.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:79.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:79.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:36.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:36.
+DEBUG (9): PUBLISH received from 3 on topic:0 with payload:98.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:98.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:17.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:17.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 1 on topic:0 with payload:63.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:57.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:57.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:18.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:18.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:2 with payload:97.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:87.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:87.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:1 with payload:93.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:53.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:53.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:85.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:85.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:2 with payload:31.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:55.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:55.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:38.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:38.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:91.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 6 on topic:2 with payload:82.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:82.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:91.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 3 on topic:0 with payload:66.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:66.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:44.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:44.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:0 with payload:34.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:34.
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:76.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:76.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:0 with payload:32.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:32.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:0 with payload:51.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 3 on topic:0 with payload:11.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:11.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:0 with payload:84.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:84.
+DEBUG (4): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:10.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): Send PUBLISH packet
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:10.
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:10.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:10.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:54.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:54.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:2 with payload:6.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:51.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:51.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:1 with payload:61.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 3 on topic:2 with payload:59.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:59.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:27.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:27.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 1 on topic:0 with payload:57.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:99.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:99.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:5.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:5.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:87.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:87.
+DEBUG (9): PUBLISH received from 3 on topic:1 with payload:19.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:19.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:91.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:91.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 4 on topic:1 with payload:0.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 1 on topic:2 with payload:32.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:32.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:79.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:79.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:1 with payload:24.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:24.
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:84.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:84.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:2 with payload:16.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (9): PUBLISH received from 5 on topic:0 with payload:70.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:70.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:1 with payload:65.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:65.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:2 with payload:57.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:57.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:0 with payload:63.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:63.
+DEBUG (9): PUBLISH received from 6 on topic:0 with payload:52.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:52.
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:0 with payload:27.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:27.
+DEBUG (9): PUBLISH received from 5 on topic:2 with payload:88.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:88.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:99.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:99.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:46.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:46.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (5): Send PUBLISH packet
+DEBUG (3): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 3 on topic:0 with payload:26.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (9): PUBLISH received from 5 on topic:0 with payload:21.
+DEBUG (1): PUBLISH received on TOPIC:0 VALUE:21.
+DEBUG (2): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 2 on topic:2 with payload:31.
+DEBUG (9): Send PUBLISH packet to 2.
+DEBUG (8): PUBLISH received on TOPIC:2 VALUE:31.
+DEBUG (4): Send PUBLISH packet
+DEBUG (1): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 1 on topic:1 with payload:42.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:42.
+DEBUG (7): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 7 on topic:1 with payload:28.
+DEBUG (9): Send PUBLISH packet to 1.
+DEBUG (7): PUBLISH received on TOPIC:1 VALUE:28.
+DEBUG (8): Send PUBLISH packet
+DEBUG (6): Send PUBLISH packet
+DEBUG (9): PUBLISH received from 8 on topic:1 with payload:98.
+DEBUG (9): Send PUBLISH packet to 1.

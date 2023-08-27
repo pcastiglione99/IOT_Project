@@ -15,11 +15,16 @@
 \section*{mqtt.h}
 The struct mqtt\_msg is used to define the message format to be sent between nodes. It contains the following attributes:
 \begin{itemize}
-  \item \texttt{type}
-  \item \texttt{ID} (sender Node ID)
-  \item \texttt{topic}
-  \item \texttt{payload}
-  \item \texttt{seq}, 32-bit number, used to identify a specific msg-ack sequence
+\item \textbf{\texttt{type}:}\\
+It specifies the type of message (CONNECT, CONNACK, SUBSCRIBE, SUBACK, PUBLISH).
+\item \textbf{\texttt{ID}:}\\
+Sender Node ID.
+\item \textbf{\texttt{topic}:}\\
+Topic to which a message is published to.
+\item \textbf{\texttt{payload}:}\\
+Content of a message.
+\item \textbf{\texttt{seq}:}\\
+32-bit number, used to identify a specific msg-ack sequence.
 \end{itemize}
 
 \section*{mqttC.nc}
